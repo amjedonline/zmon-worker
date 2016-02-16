@@ -9,3 +9,9 @@ Website = https://github.com/zalando/zmon-worker
 Description = Builtin plugin that provides an Scalyr functions
 
 [Configuration]
+;; The configuration section is optional, you can put here any parameters needed to configure the plugin.
+;; Note that these values may are overridden by zmon's global config.
+;; key = valueX
+;; Note valueX will be overridden if Zmon's global config has: plugin.{plugin_name}.{key} = valueY
+
+;; scalyr.read.key

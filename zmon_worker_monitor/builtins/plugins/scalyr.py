@@ -15,7 +15,7 @@ class ScalyrWrapperFactory(IFunctionFactoryPlugin):
         super(ScalyrWrapperFactory, self).__init__()
 
     def configure(self, conf):
-        self.read_key = conf.get('read.key', '')
+        self.read_key = conf.get('scalyr.read.key', '')
         return
 
     def create(self, factory_ctx):
@@ -115,5 +115,5 @@ class ScalyrWrapper(object):
 if __name__ == '__main__':
     import os
 
-    s = ScalyrWrapper(read_key=os.getenv('SCALYR_READ_KEY'))
+    s = ScalyrWrapper(read_key=os.getenv('WORKER_SCALYR_READ_KEY'))
     print s.count(query="$application_id='zmon-scheduler'")
